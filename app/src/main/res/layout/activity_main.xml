@@ -8,32 +8,45 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnStart"
-        android:layout_width="340dp"
-        android:layout_height="210dp"
-        android:layout_marginBottom="332dp"
+        android:id="@+id/btnLogin"
+        android:layout_width="152dp"
+        android:layout_height="61dp"
         android:backgroundTint="#9E2C08"
-        android:text="Start_SettButton2"
+        android:text="Login"
         android:textAllCaps="false"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.885"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btnStart2"
-        android:layout_width="340dp"
-        android:layout_height="210dp"
-        android:layout_marginBottom="108dp"
-        android:backgroundTint="#9E2C08"
-        android:text="Start_SettButton3"
-        android:textAllCaps="false"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/ETLOGIN"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="380dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/ETPASSWORD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/ETLOGIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.569" />
 </androidx.constraintlayout.widget.ConstraintLayout>
