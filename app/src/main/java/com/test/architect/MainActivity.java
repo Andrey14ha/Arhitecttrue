@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,7 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     EditText etLogin;
-    String etPassword;
+    EditText etPassword;
+    EditText innpassword = etPassword;
 
 
     @Override
@@ -20,12 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         btnLogin=findViewById(R.id.btnLogin);
         etLogin = findViewById(R.id.etLogin);
         etPassword = findViewById(R.id.etPassword);
 
         btnLogin.setOnClickListener(view->{
-            if (checkLogin(etLogin.getText().toString()) && checkPassword(etPassword.getText().toString()) && StaticPL(ONES == true) ){
+            if (checkLogin(etLogin.getText().toString()) && checkPassword(etPassword.getText().toString()) && StaticPL.ONES == true) {
                 startActyviti();
             }else {
                 Toast.makeText(this,"Логин или пароль не верен",Toast.LENGTH_SHORT).show();
@@ -51,20 +54,26 @@ public class MainActivity extends AppCompatActivity {
         return password.equals(Utils.password);
     }
 
-    private void StaticPL(){
-        boolean passwordtrue  = false;
-        boolean ONES = false;
-        String terter = etPassword;
-        for(int i = 0; i < terter.length(); i++)
-            if (terter.length() >= 9 && (Strpassword.letters.indexOf(terter[i]) >= 3) && (Strpassword.topletters.indexOf(terter[i]) >= 3) && (Strpassword.digits.indexOf(terter[i]) >= 3)) {
-                passwordtrue = true;
+
+
+    private class StaticPL {
+
+        // public static boolean ONES;
+        public  boolean ONES(){
+            boolean passwordtrue  = false;
+            boolean ONE = false;
+            EditText terter = innpassword;
+            for(int i = 0; i < terter.length(); i++)
+                if (terter.length() >= 9 && (Strpassword.letters.indexOf(terter[i]) >= 3) && (Strpassword.topletters.indexOf(terter[i]) >= 3) && (Strpassword.digits.indexOf(terter[i]) >= 3)) {
+                    passwordtrue = true;
+                }
+            if(etLogin.length() >= 3 && passwordtrue == true){
+                ONE = true;
             }
-        if(etLogin.length() >= 3 && passwordtrue == true){
-            ONES = true;
+            return ONE;
         }
 
     }
-
 }
 
 
